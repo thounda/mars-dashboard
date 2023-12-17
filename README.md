@@ -1,6 +1,6 @@
 # Functional Programming with Javascript
 
-## Student Instructions
+## Project Instructions
 
 ### Big Picture
 
@@ -21,6 +21,27 @@ We have supplied some of the foundational code for you. So follow these steps to
 `yarn install`
 
 \*\*If you don’t have yarn installed globally, follow their installation documentation here according to your operating system: https://yarnpkg.com/lang/en/docs/install
+
+## Prior to running the `yarn install` command, You need to install the following packages first:
+
+_- Express_
+_- Body-parser_
+_- Dotenv_
+_- immutable.js_
+
+**You can install them using the following command:**
+`yarn add immutable Express Body-parser Dotenv`
+
+or
+
+`npm install immutable Express Body-parser Dotenv`
+
+After that run the command `yarn start` or `npm start` in your project's terminal (CLI).
+
+Usually, there shouldn't be any conflicts. You can use either NPM or Yarn.
+However,If there are conflicts, try removing the package.lock and node_modules folder and install the packages again.
+
+## Note: If you are more comfortable using npm you can use it instead of yarn.
 
 2. Next you'll need a NASA developer API key in order to access the API endpoints. To do that, go here: https://api.nasa.gov/. If you want to simply look around at what api endpoints NASA offers, you can use their provided DEMO_KEY to do this.
 
