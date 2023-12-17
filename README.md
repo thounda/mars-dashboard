@@ -34,11 +34,11 @@ _- immutable.js_
 
 **You can install them using the following command:**
 
-`yarn add immutable Express Body-parser Dotenv`
+`yarn add immutable express body-parser dotenv`
 
 or
 
-`npm install immutable Express Body-parser Dotenv`
+`npm install immutable express body-parser dotenv`
 
 After that run the command `yarn start` or `npm start` in your project's terminal (CLI).
 
