@@ -1,28 +1,37 @@
-require('dotenv').config()
-const express = require('express')
-const bodyParser = require('body-parser')
-const fetch = require('node-fetch')
-const path = require('path')
+// Load environment variables from a `.env` file.
+require("dotenv").config();
+// Import dependencies - packages to script
+const express = require("express");
+const bodyParser = require("body-parser");
+const path = require("path");
 
-const app = express()
-const port = 3000
+// Create an Express application instance.
+const app = express();
 
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
+// Import all routes from the 'route' file.
+const appRouter = require("./route");
 
-app.use('/', express.static(path.join(__dirname, '../public')))
+// Import specific controllers for handling not found and error situations.
+const { notFoundController, errorController } = require("./controller");
 
-// your API calls
+// Use bodyParser to parse URL-encoded data (extended: false for basic parsing).
+app.use(bodyParser.urlencoded({ extended: false }));
 
-// example API call
-app.get('/apod', async (req, res) => {
-    try {
-        let image = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${process.env.API_KEY}`)
-            .then(res => res.json())
-        res.send({ image })
-    } catch (err) {
-        console.log('error:', err);
-    }
-})
+// Use bodyParser to parse JSON data in requests.
+app.use(bodyParser.json());
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+// Serve static files from the '../public' directory under the root path ('/').
+app.use("/", express.static(path.join(__dirname, "../public")));
+
+// Use all routes defined in 'appRouter' for requests starting with '/'.
+app.use("/", appRouter);
+
+/* Defining routing rules  */
+// Handle requests that reach no specific route (404 Not Found).
+app.use(notFoundController);
+
+// Handle any errors that occur during request processing.
+app.use(errorController);
+
+// Start the Express app on port 3000 and log a message.
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
