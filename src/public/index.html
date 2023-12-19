@@ -1,20 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Mars Dashboard</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <!-- This link loads the "Lato" font from Google Fonts, with the "display=swap" parameter
+   optimizing font loading. -->
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+    <link rel="stylesheet" href="./assets/stylesheets/index.css" />
+    <!-- This link references the "index.css" file located in the "assets/stylesheets/" directory,
+   presumably containing custom styles for the webpage. -->
 
-<body>
-    <main>
-        <div id="root">
-            <h1>Loading...</h1>
-        </div>
-    </main>
-</body>
-<script src="/client.js"></script>
+    <link rel="stylesheet" href="./assets/stylesheets/resets.css" />
+    <!-- This link references the "resets.css" file located in the same directory, likely containing
+   basic styles that reset browser defaults for consistent presentation. -->
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/immutable/3.8.2/immutable.min.js"></script>
+    <!-- a script tag that includes the JavaScript library "Immutable.js" from a CDN (Content Delivery Network).
+   -->
+  </head>
+
+  <body>
+    <div id="root">
+      <h1>Loading...</h1>
+    </div>
+  </body>
+  <script src="/client.js"></script>
 </html>
