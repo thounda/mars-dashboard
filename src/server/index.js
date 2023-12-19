@@ -14,6 +14,9 @@ const appRouter = require("./route");
 // Import specific controllers for handling not found and error situations.
 const { notFoundController, errorController } = require("./controller");
 
+// specify port # for connection
+const port = 3000;
+
 // Use bodyParser to parse URL-encoded data (extended: false for basic parsing).
 app.use(bodyParser.urlencoded({ extended: false }));
 
