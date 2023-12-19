@@ -483,14 +483,14 @@ const getImageOfTheDay = (state) => {
 
   // 2. Make a fetch request to the API endpoint (localhost:3000/apod).
   fetch(`https://localhost:3000/apod`)
-    .then((response) => response.json()) // Handle successful response
+    .then((res) => res.json()) // Handle successful response
     .then((apodData) => {
       // 3. Update the store with the received APOD data ("apod")
       updateStore("apod", apodData);
     })
-    .catch((error) => {
+    .catch((err) => {
       // Handle network or API errors
-      console.log(error);
+      console.log(err);
     });
 
   // 4. Do not return any value (function is void).
@@ -541,7 +541,7 @@ const getRoverData = async (state) => {
 
   // 4. Make a fetch request to the API endpoint.
   await fetch(url)
-    .then((response) => response.json()) // Handle successful response
+    .then((res) => res.json()) // Handle successful response
     .then(({ data }) => {
       // 5. Extract the "photos" data from the received JSON response.
       const photos = data.photos;
@@ -549,9 +549,9 @@ const getRoverData = async (state) => {
       // 6. Update the store with the retrieved rover photo data ("photos").
       updateStore("roverInfo", photos);
     })
-    .catch((error) => {
+    .catch((err) => {
       // Handle network or API errors
-      console.log("err", error);
+      console.log("err", err);
     });
 
   // 7. Do not return any value (function is void).
