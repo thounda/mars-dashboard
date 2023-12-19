@@ -482,7 +482,7 @@ const getImageOfTheDay = (state) => {
   const { apod } = state;
 
   // 2. Make a fetch request to the API endpoint (localhost:3000/apod).
-  fetch(`https://localhost:3000/apod`)
+  fetch(`http://localhost:3000/apod`)
     .then((res) => res.json()) // Handle successful response
     .then((apodData) => {
       // 3. Update the store with the received APOD data ("apod")
@@ -537,7 +537,7 @@ const getRoverData = async (state) => {
   //   This allows us to "await" the completion of the network request.
 
   // 3. Construct the API endpoint URL with the selected rover name.
-  const url = `https://localhost:3000/rover?rover=${selectedRover}`;
+  const url = `http://localhost:3000/rover?rover=${selectedRover}`;
 
   // 4. Make a fetch request to the API endpoint.
   await fetch(url)
