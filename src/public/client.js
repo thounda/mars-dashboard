@@ -13,7 +13,7 @@ This section of code defines the basic structure and state management for the ap
 
 let store = Immutable.fromJS({
   // This object represents the application's state using Immutable.js
-  user: { name: "Student" }, // Stores the user's name
+  user: { name: "T.Craig" }, // Stores the user's name
   apod: "", // Initially empty for the Astronomy Picture of the Day
   rovers: ["Curiosity", "Opportunity", "Spirit"], // Available Mars rovers
   selectedRover: "Curiosity", // Currently selected rover
