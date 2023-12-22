@@ -267,7 +267,7 @@ const DashboardUI = (listComponent, data) => {
     // Title with the selected rover camera.
     return `
         <section class="rover-info">
-          <h2>Details for ${roverData.name} rover camera</h2>
+          <h2>YES - Details for ${roverData.name} rover camera</h2>
           ...
         </section>
       `;
