@@ -122,7 +122,7 @@ const Greeting = (name) => {
   // Check if a name is provided
   if (name) {
     // If name exists, create a welcome message
-    const welcomeMessage = `<h1 class="welcome">Welcome, <span class="name">${name}</span></h1>`;
+    const welcomeMessage = `<h1 class="welcome">Hi, <span class="name">${name}</span></h1>`;
 
     // Combine the welcome message and the static HTML content
     return welcomeMessage + html;
