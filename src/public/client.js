@@ -47,16 +47,15 @@ window.addEventListener("load", () => {
 
 // ------------------------------------------------------  COMPONENTS
 
-// Pure function that renders conditional information -- THIS IS JUST AN EXAMPLE, you can delete it.
+// Pure function that renders conditional information --
 const Greeting = (name) => {
   let html = `
 		<h1 class="title">Mars Dashboard</h1>
-		<p class="desc">Click on any of the rovers to view recent pictures.</p>
+		<p class="desc">Click on any of the rovers to view collected images.</p>
 	`;
   if (name) {
     return (
-      `<h1 class="welcome">Welcome, <span class="name">${name}</span></h1>` +
-      html
+      `<h1 class="welcome">Hi, <span class="name">${name}</span></h1>` + html
     );
   }
   return html;
@@ -109,7 +108,7 @@ const DashboardUI = (listComponent, data) => {
 		</section>
   `;
   } else {
-    return '<p class="loading">Loading..</p>';
+    return '<p class="loading">Loading Data...</p>';
   }
 };
 
@@ -139,7 +138,7 @@ const ImageOfTheDay = (apod) => {
   // check if the photo of the day is actually type video!
   if (apod.media_type === "video") {
     return `
-            <p>See today's featured video <a href="${apod.url}">here</a></p>
+            <p>View featured video <a href="${apod.url}">here</a></p>
             <p>${apod.title}</p>
             <p>${apod.explanation}</p>
         `;
@@ -169,7 +168,7 @@ const getRoverInfo = (store) => {
 
 // ------------------------------------------------------  API CALLS
 
-// Example API call
+// Fetch API call
 const getImageOfTheDay = (state) => {
   const { apod } = state;
 
