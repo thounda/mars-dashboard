@@ -128,7 +128,8 @@ const Greeting = (name) => {
     return welcomeMessage + html;
   } else {
     // If no name exists, use only the static HTML content
-    return html;
+    //return html;
+    return `No Roover / name selected - check code! (PROBLEM)`;
   }
 };
 
