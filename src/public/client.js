@@ -149,8 +149,10 @@ Breakdown:
 Overall Logic:
 
 The Tabs function dynamically generates a set of tab buttons and highlights the currently selected one based on the provided tabLinks and selected parameters. It builds the HTML structure and leaves event handling to the caller and other functions like selectRover.
-*/
 
+
+
+CODE TO BE REMOVED - START
 const Tabs = (tabLinks, selected) => {
   // Check if there are any available tabs
   if (!tabLinks.length) {
@@ -180,6 +182,24 @@ const Tabs = (tabLinks, selected) => {
   return `
 		<div class="tabs">${tabLinkHtml}</div>
 	`;
+};
+CODE TO BE REMOVED - END
+*/
+
+// ENSURE TO ADD COMMENTS TO THIS SeCTION OF CODE
+const Tabs = (tabLinks, selected) => {
+  //Check if tabLink is empty
+  const tabLinkHtml = tabLinks
+    .map((link) => {
+      if (link == selected) {
+        return `<button class="tabLink active" onclick="selectRover(event, '${link}')" >${link}</button>`;
+      }
+      return `<button class="tabLink" onclick="selectRover(event, '${link}')" >${link}</button>`;
+    })
+    .join("");
+  return `
+        <div class="tabs">${tabLinkHtml}</div>
+    `;
 };
 
 //Explanation of imageHtml Function
