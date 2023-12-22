@@ -77,9 +77,7 @@ const App = (state) => {
 				${DashboardUI(List, state)}
 			</section>
 		</main>
-		<footer>
-			</header>
-	`;
+		<footer></footer>`;
 };
 
 // listening for load event because page should load before any JS is called
